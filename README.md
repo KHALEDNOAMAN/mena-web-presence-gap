@@ -32,6 +32,7 @@ The data comes from Google Maps listings I collected for a website-building outr
 ## What's in the repo
 
 ```
+app.py              # interactive Streamlit app
 analysis.ipynb      # full analysis with code, charts and findings
 build_notebook.py   # regenerates the notebook from source
 data/               # aggregated CSVs (by city, sector, quality signal)
@@ -42,8 +43,11 @@ images/             # charts exported from the notebook
 
 ```bash
 pip install -r requirements.txt
-jupyter notebook analysis.ipynb
+streamlit run app.py              # interactive app
+jupyter notebook analysis.ipynb   # full analysis with code
 ```
+
+The app reads the same CSVs as the notebook, so the two always agree. It adds a toggle to bring Istanbul back into the city comparison, a slider to filter sectors by sample size, and the confidence interval on every quality gap.
 
 ## Method and limitations
 
@@ -56,7 +60,7 @@ jupyter notebook analysis.ipynb
 - Website status reflects the time of collection (October 2026).
 - Gaps between businesses with and without a site are reported with 95% confidence intervals in the notebook (two-proportion, normal approximation).
 
-**Tools:** Python, pandas, matplotlib, Jupyter.
+**Tools:** Python, pandas, matplotlib, Jupyter, Streamlit, Altair.
 
 ## Author
 
