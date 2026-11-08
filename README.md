@@ -17,7 +17,7 @@ The data comes from Google Maps listings I collected for a website-building outr
 | No website at all | **3,851 (36%)** |
 | Priority prospects (no site, 4.5+ stars, 100+ reviews, WhatsApp) | **304** |
 
-**1. The gap varies a lot by city.** Nearly every listed business in Istanbul and Amman is offline, while Dubai and Doha are around one third.
+**1. The gap varies a lot by city.** 92% of listed businesses in Amman have no working website, against about one third in Dubai (32%) and Doha (36%). Istanbul is left out of this comparison because its listings came from a search for businesses without a website.
 
 ![By city](images/by_city.png)
 
@@ -25,7 +25,7 @@ The data comes from Google Maps listings I collected for a website-building outr
 
 ![By sector](images/by_sector.png)
 
-**3. Offline does not mean low quality.** Businesses without a site are rated almost the same as those with one (56% vs 60% at 4.5+ stars). They rely on WhatsApp instead (76% vs 56%) and rarely have Instagram (7% vs 43%).
+**3. Offline does not mean low quality, but it does mean less visible.** Ratings are close: 56% vs 60% at 4.5+ stars, a real but small gap of 3.3 points (95% CI 1.4 to 5.1). Reviews differ more: 28% vs 38% have 100+ reviews. Offline businesses rely on WhatsApp instead (76% vs 56%) and rarely have Instagram (7% vs 43%).
 
 ![Quality](images/quality.png)
 
@@ -49,9 +49,12 @@ jupyter notebook analysis.ipynb
 
 - "Without a working website" = no website + social-media only + broken site.
 - Listings come from targeted Google Maps searches, not a random sample of every business in each city.
-- Riyadh is 57% of rows, so cities are compared by share, not count. Istanbul has the smallest sample (n=157).
-- Sector results cover the 22 largest sectors (about 83% of listings).
+- Riyadh is 57% of rows, so cities are compared by share, not count.
+- Istanbul's 157 listings came from a lead search for businesses without a website, so 0 live sites there is how they were collected, not a finding. They count in the totals but are excluded from the city comparison.
+- Cities may differ in sector mix, which can drive part of the city gap.
+- Sector results cover the 22 largest sectors (7,886 listings, 73% of the total).
 - Website status reflects the time of collection (October 2026).
+- Gaps between businesses with and without a site are reported with 95% confidence intervals in the notebook (two-proportion, normal approximation).
 
 **Tools:** Python, pandas, matplotlib, Jupyter.
 
