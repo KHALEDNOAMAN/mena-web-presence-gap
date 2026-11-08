@@ -2,3 +2,6 @@ pandas
 matplotlib
 jupyter
 nbformat
+streamlit
+altair
+numpy
